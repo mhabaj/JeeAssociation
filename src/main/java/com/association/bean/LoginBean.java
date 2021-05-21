@@ -28,7 +28,7 @@ public class LoginBean implements Serializable{
 	private static final String UNMATCHED = "identifiants faux !";
 	
 	/**
-	 * 
+	 * Permet de valider la connexion d'un utilisateur et par conséquent de le rediriger vers la page qu'il faut.
 	 * @return redirection : String
 	 */
 	public String isUserValid() {
@@ -46,7 +46,7 @@ public class LoginBean implements Serializable{
 	}
 	
 	/**
-	 * 
+	 * permet de déconnecter l'utilisateur de son compte.
 	 * @return redirection : String
 	 */
 	public String logout() {
@@ -55,7 +55,7 @@ public class LoginBean implements Serializable{
 	}
 
 	/**
-	 * 
+	 * permet d'obtenir l'erreur d'un certain champs.
 	 * @return errorMessage : String
 	 */
 	public String getErrorMessage() {
@@ -63,7 +63,7 @@ public class LoginBean implements Serializable{
 	}
 
 	/**
-	 * 
+	 * Permet de générer les erreurs de champs.
 	 * @param errorMessage : String
 	 */
 	public void setErrorMessage(String errorMessage) {
@@ -71,7 +71,7 @@ public class LoginBean implements Serializable{
 	}
 	
 	/**
-	 * 
+	 * Getter de l'attribut user.
 	 * @return
 	 */
 	public User getUser() {
@@ -79,7 +79,7 @@ public class LoginBean implements Serializable{
 	}
 	
 	/**
-	 * 
+	 * Setter de l'attribut user.
 	 * @param user
 	 */
 	public void setUser(User user) {

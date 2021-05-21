@@ -8,7 +8,6 @@ import javax.faces.validator.ValidatorException;
 
 import com.association.dao.InsertDao;
 import com.association.model.User;
-import com.association.util.MailUtil;
 
 /**
  * \brief classe register bean permettant à l'utilisateur de créer son compte.
@@ -42,24 +41,6 @@ public class RegisterBean implements Serializable{
 		return "Login?faces-redirect=trues";
 	}
 	
-	/**
-	 * permet d'envoyer le message de confirmation lors du login.
-	 * @param destinataire
-	 * @param expediteur
-	 * @param prenom
-	 * @param sujet
-	 * @param message
-	 * @throws Exception
-	 */
-    public void envoiMailConfirmation(String destinataire,String expediteur,String prenom, String sujet,String message) throws Exception{
-    	MailUtil mail = new MailUtil();	
-    	mail.setExpediteur(expediteur);
-    	mail.setDestinataire(destinataire);
-    	mail.setSujet(sujet);
-    	mail.setMessage(message);
-    	mail.envoiEmail();
-    }
-
 	/**
 	 * getter de l'attribut user de registerbean
 	 * @return user : User
