@@ -1,0 +1,110 @@
+body {
+	margin: 0;
+	height: 100%;
+}
+
+footer {
+	height: 10vh;
+}
+
+iframe {
+	width: 24vw;
+	height: 40vh;
+}
+
+h2 {
+	margin-left: 5%;
+}
+
+h3 {
+	margin-left: 5%;
+}
+
+::-webkit-scrollbar {
+	width: 0px; /* Remove scrollbar space */
+	background: transparent; /* Optional: just make scrollbar invisible */
+}
+
+.content {
+	width: 100vw;
+	height: 94vh;
+	overflow-y: scroll;
+}
+
+.sub-content {
+	width: 90%;
+	background-color: rgba(241, 252, 251, 0.87);
+	margin-left: 5%;
+	border-radius: 2%;
+}
+
+.sub-sub-content {
+	width: 90%;
+	background-color: rgba(231, 252, 250, 0.87);
+	margin-left: 5%;
+	margin-top: 2%;
+	margin-bottom: 2%;
+	border-radius: 2%;
+}
+
+.wrapper {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin-left: 5vw;
+	margin-right: 5vw;
+	text-align: justify;
+}
+
+.sub-wrapper {
+	display: flex;
+	flex-direction: row;
+	width: 50vw;
+	justify-content: space-between;
+}
+
+.navbar {
+	margin-bottom: 0;
+}
+
+#banner {
+	background: url("#{resource['img/banner.webp']}");
+	background-size: 100vw;
+	background-position: 0 25%;
+	height: 30vh;
+	margin : 0;
+	margin-bottom: 2vh;
+}
+
+#ad {
+	height: 40vh;
+	object-fit: scale-down;
+	margin-right: 10px;
+}
+
+#spectacle {
+	height: 40vh;
+	object-fit: contain;
+	margin: 10px;
+}
+
+#ad {
+	border: solid black;
+	border-radius: 2%;
+	padding: 2%;
+	padding-top: 0;
+	height: max-content;
+}
+
+#ad img {
+	height: 80px;
+	padding-bottom: 2%;
+}
+
+#illustration {
+	height: 30vh;
+	object-fit: contain;
+	margin-right: 10px;
+	margin-left: 10px;
+	margin-bottom: 10px;
+}
