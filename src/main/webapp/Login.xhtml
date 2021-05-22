@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+
+<h:head>
+	<meta charset="utf-8" />
+	<title>Connexion</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous"/>
+	<!--<h:outputStylesheet library="bootstrap" name="css/bootstrap.css" />-->
+</h:head>
+
+
+<h:body>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<a class="navbar-brand" href="#"></a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarNav" aria-controls="navbarNav"
+			aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav">
+				<li class="nav-item active"><a href="Login.xhtml"><img src="resources/img/Logo.jpg" width="30" height="30" alt="Logo"/></a></li>
+				<li class="nav-item"><a class="nav-link" href="Apropos.xhtml">à propos</a></li>
+				<li class="nav-item"><a href="Register.xhtml" class="btn btn-success position-absolute top-0 end-0" style="margin: 1rem;">S'inscrire</a></li>
+			</ul>
+		</div>
+	</nav>
+
+
+	<div class="container">
+		<h:form id="loginForm" class="form-signin">
+			<fieldset>
+				<legend>Connexion</legend>
+
+
+				<div class="form-group">
+					Login:
+
+					<h:inputText id="login" class="form-control"
+						value="#{loginBean.user.pseudo}" />
+					<h:message id="loginMessage" for="login" class="text-danger" />
+					<br />
+				</div>
+				<div class="form-group">
+					Password:
+
+					<h:inputSecret type="hidden" id="password" class="form-control"
+						value="#{loginBean.user.password}" />
+					<h:message id="passwordMessage" for="password" class="text-danger" />
+					<br />
+				</div>
+
+
+				<h:commandButton class="btn btn-lg btn-primary btn-block"
+					action="#{loginBean.isUserValid}" value="Se Connecter" />
+				<br />
+				<h:outputText class="text-danger" value="#{loginBean.errorMessage}"
+					render="#{loginBean.errorMessage != null}" />
+			</fieldset>
+		</h:form>
+		<br/>
+		<a class="btn btn-success" href="Register.xhtml">S'inscrire</a>
+		
+	</div>
+</h:body>
+</html>
