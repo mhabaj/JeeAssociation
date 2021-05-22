@@ -20,7 +20,7 @@ public class CommentDao extends Dao {
 	@SuppressWarnings("unchecked")
 	public List<Comment> getAllComments() {
 		List<Comment> returnList = new ArrayList<Comment>();
-		Query query = getEm().createQuery("SELECT e FROM Comment e ORDER By e.upvoteNumber DESC");
+		Query query = getEm().createQuery("SELECT e FROM Comment e ORDER BY e.upvoteNumber DESC");
 		returnList = query.getResultList();
 
 		return returnList;
@@ -52,7 +52,7 @@ public class CommentDao extends Dao {
 	 * @return idComment : int
 	 */
 	private int FindIdByContent(String content) {
-		Query query = getEm().createQuery("Select u FROM Comment u WHERE content = :content ");
+		Query query = getEm().createQuery("SELECT u FROM Comment u WHERE content = :content ");
 		query.setParameter("content", content);
 		Comment comment = (Comment) query.getResultList().get(0);
 		return comment.getIdComment();
@@ -65,7 +65,7 @@ public class CommentDao extends Dao {
 	 * @return comment : Comment
 	 */
 	public Comment getCommentByContent(String content) {
-		Query query = getEm().createQuery("Select u FROM Comment u WHERE content = :content ");
+		Query query = getEm().createQuery("SELECT u FROM Comment u WHERE content = :content ");
 		query.setParameter("content", content);
 		if (query.getResultList().size() != 0)
 			return (Comment) query.getResultList().get(0);

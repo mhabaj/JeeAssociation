@@ -31,7 +31,7 @@ public class UserDao extends Dao {
 	 * @return {true|false] : boolean
 	 */
 	public boolean isAuthentified(String pseudo, String password) {
-		Query query = getEm().createQuery("Select u FROM User u WHERE pseudo = :pseudo AND password = :password");
+		Query query = getEm().createQuery("SELECT u FROM User u WHERE pseudo = :pseudo AND password = :password");
 		query.setParameter("pseudo", pseudo);
 		query.setParameter("password", password);
 		if (query.getResultList().size() != 0) {
@@ -47,7 +47,7 @@ public class UserDao extends Dao {
 	 * @return {true|false} : boolean
 	 */
 	public boolean find(String email) {
-		Query query = getEm().createQuery("Select u FROM User u WHERE mail = :mail ");
+		Query query = getEm().createQuery("SELECT u FROM User u WHERE mail = :mail ");
 		query.setParameter("mail", email);
 		if (query.getResultList().size() != 0) {
 			return true;
@@ -62,7 +62,7 @@ public class UserDao extends Dao {
 	 * @return userByLogin : User
 	 */
 	public User getUserByLogin(String login) {
-		Query query = getEm().createQuery("Select u FROM User u WHERE pseudo = :login ");
+		Query query = getEm().createQuery("SELECT u FROM User u WHERE pseudo = :login ");
 		query.setParameter("login", login);
 		if (query.getResultList().size() != 0)
 			return (User) query.getResultList().get(0);
@@ -109,7 +109,7 @@ public class UserDao extends Dao {
 	public boolean hasUserUpvotedComment(int userId, int commentId) {
 		Query query = getEm()
 				.createQuery(
-						"Select u FROM Upvoting u WHERE user_idUser = :user_idUser AND comment_idComment =:comment_idComment ")
+						"SELECT u FROM Upvoting u WHERE user_idUser = :user_idUser AND comment_idComment =:comment_idComment ")
 				.setParameter("user_idUser", userId).setParameter("comment_idComment", commentId);
 		if (query.getResultList().size() != 0) {
 			return true;
