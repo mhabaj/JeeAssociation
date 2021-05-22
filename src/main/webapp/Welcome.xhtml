@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:h="http://java.sun.com/jsf/html">
+	xmlns:h="http://java.sun.com/jsf/html" 
+	xmlns:ui="http://java.sun.com/jsf/facelets" 
+	xmlns:f="http://java.sun.com/jsf/core">
 
 
 <h:head>
@@ -34,7 +36,7 @@
 				<li class="nav-item"><h:form>
 						<h:commandLink value="Se Déconnecter" style="margin: 1rem;"
 							class="btn btn-danger navbar-btn position-absolute top-0 end-0"
-							action="#{loginBean.logout}"/>
+							action="#{loginBean.logout}" />
 					</h:form></li>
 			</ul>
 		</div>
@@ -127,16 +129,30 @@
 			</div>
 		</div>
 	</div>
-
-
+	
+<div class="container">
+            	<h1 style="text-align: center; padding-top: 5rem; padding-bottom: 5rem;"> Les membres de la famille ! </h1>
+				
+			
+				<ui:repeat value="#{usersBean.users}" var="user">
+				<div class="card text-white bg-dark mb-3" style="width: 18rem;">
+				<div class="card-header">Membre du club</div>
+  					<div class="card-body">
+    					<h5 class="card-title">Pseudo : #{user.pseudo}</h5>
+    					<p class="card-text">Le nom de ce membre est : #{user.firstname} et son prénom est #{user.name}.<br/>
+    										Contactez le par mail : #{user.mail} ou rendez-lui visite, voici son addresse : #{user.address}</p>
+  					</div>
+				</div>
+				<br/>
+				<br/>
+				</ui:repeat>
+				
+			
+			       
+            </div>
+			
+			    
 </h:body>
-
-
-
-
-
-
-
 
 
 
