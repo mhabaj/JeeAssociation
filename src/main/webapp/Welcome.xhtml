@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:h="http://java.sun.com/jsf/html">
+	xmlns:h="http://java.sun.com/jsf/html" 
+	xmlns:ui="http://java.sun.com/jsf/facelets" 
+	xmlns:f="http://java.sun.com/jsf/core">
 
 
 <h:head>
@@ -34,7 +36,7 @@
 				<li class="nav-item"><h:form>
 						<h:commandLink value="Se Déconnecter" style="margin: 1rem;"
 							class="btn btn-danger navbar-btn position-absolute top-0 end-0"
-							action="#{loginBean.logout}"/>
+							action="#{loginBean.logout}" />
 					</h:form></li>
 			</ul>
 		</div>
@@ -127,8 +129,28 @@
 			</div>
 		</div>
 	</div>
-
-
+	
+<div class="container">
+            	<p> List des membres de l'association </p>
+			
+			
+				<ui:repeat value="#{usersBean.users}" var="user">
+				<div class ="panel panel-default">
+				<div class="panel-body">
+			
+				
+					<p> pseudo : #{user.pseudo} </p>
+					<p> nom : #{user.firstname} </p>
+					<p> prénom : #{user.name} </p>
+					<p> addresse mail : #{user.mail} </p>
+				</div>
+				</div>
+				</ui:repeat>
+			
+			       
+            </div>
+			
+			    
 </h:body>
 
 

@@ -78,6 +78,8 @@ public class CommentBean implements Serializable {
 
 	/********************************************GETTERS ET SETTERS DE LA CLASSE********************************************/
 	public List<Comment> getComments() {
+		CommentDao commentDao = new CommentDao();
+		comments = commentDao.getAllComments();
 		return comments;
 	}
 
