@@ -38,13 +38,14 @@
 							class="btn btn-danger navbar-btn position-absolute top-0 end-0"
 							action="#{loginBean.logout}" />
 					</h:form></li>
+					<li class="nav-item"><a class="nav-link" href="LivretDeCommentaires.xhtml">Livre d'or</a></li>
 			</ul>
 		</div>
 	</nav>
 
 	<!--Center heroes avec une image-->
 	<div class="px-4 pt-5 my-5 text-center border-bottom">
-		<h1 class="display-4 fw-bold">Bonjour,</h1>
+		<h1 class="display-4 fw-bold">Bonjour, #{loginBean.user.pseudo}</h1>
 		<div class="col-lg-6 mx-auto">
 			<p class="lead mb-4">Bienvenue sur le site de votre club de
 				natation préféré, ici d'innombrables champions ont été exposés à la
