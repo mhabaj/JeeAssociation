@@ -49,9 +49,7 @@ public class User {
 	@OneToMany(cascade = CascadeType.MERGE, mappedBy = "user") //1 user peut posséder plusieurs commentaires à son nom
 	private List<Comment> commentList;//liste de ses commentaires écrits.
 	
-	@OneToMany(cascade = CascadeType.MERGE, mappedBy = "user") //1 user peut posséder plusieurs upvotes
-	private List<Upvoting> upvotingList; //liste des upvotes de l'utilisateur.
-	
+
 	/**
 	 * constructeur par défaut
 	 */
@@ -154,13 +152,7 @@ public class User {
 		this.commentList = commentList;
 	}
 
-	public List<Upvoting> getUpvotingList() {
-		return upvotingList;
-	}
 
-	public void setUpvotingList(List<Upvoting> upvotingList) {
-		this.upvotingList = upvotingList;
-	}
 	/****************************************************************************************************/
 
 	/**
@@ -172,7 +164,7 @@ public class User {
 	public String toString() {
 		return "User [idUser=" + idUser + ", pseudo=" + pseudo + ", password=" + password + ", name=" + name
 				+ ", firstname=" + firstname + ", address=" + address + ", mail=" + mail + ", commentList="
-				+ commentList + ", upvotingList=" + upvotingList + "]";
+				+ commentList + "]";
 	}
 	
 	

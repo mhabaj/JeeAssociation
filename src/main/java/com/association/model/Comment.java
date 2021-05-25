@@ -37,8 +37,6 @@ public class Comment {
 
 	private int upvoteNumber;
 
-	@OneToMany(cascade = CascadeType.MERGE, mappedBy = "comment")
-	private List<Upvoting> upvoting; // le commentaire a sa liste d'upvotes qui lui sont associés.
 	
 	/**
 	 * constructeur par défaut
@@ -85,13 +83,6 @@ public class Comment {
 		this.upvoteNumber = upvoteNumber;
 	}
 
-	public List<Upvoting> getUpvoting() {
-		return upvoting;
-	}
-
-	public void setUpvoting(List<Upvoting> upvoting) {
-		this.upvoting = upvoting;
-	}
 	
 	
 	public User getUser() {

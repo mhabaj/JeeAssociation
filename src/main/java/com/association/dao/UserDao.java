@@ -6,7 +6,6 @@ import java.util.List;
 import javax.persistence.Query;
 
 import com.association.model.Comment;
-import com.association.model.Upvoting;
 import com.association.model.User;
 
 /**
@@ -79,7 +78,6 @@ public class UserDao extends Dao {
 		
 		//selectionner ses commentaires et ses upvotes
 		List<Comment> commentsOfThisUser = new ArrayList<Comment>();
-		List<Upvoting> upvotingsOfThisUser = new ArrayList<Upvoting>(); 
 		for(User currentUser : allUsers) {
 			//commentaires
 			Query query = getEm().createQuery("SELECT e FROM Comment e WHERE user_idUser= :user_idUser ORDER BY e.upvoteNumber DESC")
@@ -88,13 +86,7 @@ public class UserDao extends Dao {
 				commentsOfThisUser = query.getResultList();
 				currentUser.setCommentList(commentsOfThisUser);
 			}
-			//upvotes
-			Query query2 = getEm().createQuery("SELECT v FROM Upvoting v WHERE user_idUser= :user_idUser")
-					.setParameter("user_idUser", currentUser.getIdUser());
-			if(query2.getResultList().size() != 0) {
-				upvotingsOfThisUser = query2.getResultList();
-				currentUser.setUpvotingList(upvotingsOfThisUser);
-			}
+			
 		}
 		return allUsers;
 	}

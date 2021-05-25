@@ -11,7 +11,6 @@ import com.association.dao.CommentDao;
 import com.association.dao.InsertDao;
 import com.association.dao.UserDao;
 import com.association.model.Comment;
-import com.association.model.Upvoting;
 
 /**
  * \brief classe Comment bean permettant à l'utilisateur de poster, consulter les commentaires du livre d'or.
@@ -50,31 +49,6 @@ public class CommentBean implements Serializable {
 		return "Comments?faces-redirect=true";
 	}
 	
-	/**
-	 * augmenter le nombre d'upvotes d'un commentaire en fonction de son contenant.
-	 * @param content : String
-	 * @return redirection : String
-	 */
-	public String upvoteAComment(String content) {
-		try {
-			UserDao userDao = new UserDao();
-			CommentDao commentDao = new CommentDao();
-			InsertDao insertDao = new InsertDao();
-			for (Comment comment : comments) {
-				if (content.equals(comment.getContent())) {
-					int userId = userDao.getUserByLogin(loginBean.getUser().getPseudo()).getIdUser();
-					if (!userDao.hasUserUpvotedComment(userId, comment.getIdComment())) { //si l'utilisateur a upvote un commentaire
-						commentDao.updateCompteur(comment.getContent());
-						insertDao.insertObjectbyMerging(new Upvoting(userDao.getUserByLogin(loginBean.getUser().getPseudo()), commentDao.getCommentByContent(comment.getContent())));
-					}
-				}
-			}
-		} catch (Exception e) {
-			System.out.println(e);
-			return "Error?faces-redirect=true";
-		}
-		return "Comments";
-	}
 
 	/********************************************GETTERS ET SETTERS DE LA CLASSE********************************************/
 	public List<Comment> getComments() {
