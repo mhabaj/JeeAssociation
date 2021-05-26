@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html" 
+	xmlns:ui="http://java.sun.com/jsf/facelets" 
+	xmlns:f="http://java.sun.com/jsf/core">
+
+
+<h:head>
+	<meta charset="utf-8" />
+	<title>Welcome</title>
+	<link
+		href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+		rel="stylesheet"
+		integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+		crossorigin="anonymous" />
+</h:head>
+
+
+<h:body>
+	<!--navbar-->
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<a class="navbar-brand" href="#"></a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarNav" aria-controls="navbarNav"
+			aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav">
+				<li class="nav-item active"><a href="Welcome.xhtml"><img
+						src="resources/img/Logo.jpg" width="30" height="30" alt="Logo" /></a></li>
+				<li class="nav-item"><a class="nav-link" href="Apropos.xhtml">à
+						propos</a></li>
+					<li class="nav-item"><a class="nav-link" href="LivretDeCommentaires.xhtml">Livre d'or</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<!--Center heroes avec une image-->
+	<div class="px-4 pt-5 my-5 text-center border-bottom">
+		<h1 class="display-4 fw-bold">Bonjour, visiteur</h1>
+		<div class="col-lg-6 mx-auto">
+			<p class="lead mb-4">Bienvenue sur le site de votre club de
+				natation préféré, ici d'innombrables champions ont été exposés à la
+				gloire !</p>
+			<div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
+				<button type="button" class="btn btn-primary btn-lg px-4 me-sm-3">Primary
+					button</button>
+				<button type="button" class="btn btn-outline-secondary btn-lg px-4">Secondary</button>
+			</div>
+		</div>
+		<div class="overflow-hidden" style="max-height: 50vh;">
+			<div class="container px-5">
+				<img src="resources/img/natationCentre.jpg"
+					class="img-fluid border rounded-3 shadow-lg mb-4"
+					alt="Example image" width="700" height="500" loading="lazy" />
+				<p class="lead mb-4">Mylène Micoton, 55 fois championne du monde
+					aux JO.</p>
+			</div>
+		</div>
+	</div>
+	<!--!end-->
+
+
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-8">
+				<div class="row justify-content-center">
+					<h1>Présentation de l'association</h1>
+				</div>
+				<p class="text-center">Le club de natation ClubNatation est
+					actif depuis les années 1920, nos petits poissons sillonnent les
+					piscines dans le monde entier. Ayant remportés des milliers de
+					titres internationaux, nos athlètes se démarquent par leur volonté
+					indestructible, de plus, ils sont suivis par les meilleurs coaches
+					aux monde, le club gère tous les aspects de leur vie : santé
+					physique et mentale, marketing, nourriture et performances
+					physiques ! REJOIGNEZ-NOUS ET DEVENEZ UN VERITABLE ATHLETE !</p>
+			</div>
+			<div class="col-sm-4">
+				<img src="resources/img/mylène.png" width="500" height="300" />
+				<p class="text-center">Mylène est de retour pour gagner sa 56ème
+					médaille !</p>
+			</div>
+		</div>
+		<br />
+		<div class="row">
+			<div class="col-sm-8">
+				<div class="row justify-content-center">
+					<h1>Les meilleurs talents du millénaire</h1>
+				</div>
+				<p class="text-center">Nous avons avec nous la référence ultime
+					du crawl à mains libres, le meilleur nageur de tous les temps ,
+					surnommé par ses paires le grand requin blanc : Alphonse Danlmur.
+					Pour l'année 2021 le grand requin blanc est décidé à défendre son
+					throne, voici un message de l'homme lui-même : "Les autres nageurs
+					ne seront que des sardines pour moi, ils ne sont que des ombres
+					derrière mon throne".</p>
+			</div>
+			<div class="col-sm-4">
+				<img src="resources/img/alphonse.jpg" width="500" height="300" />
+				<p class="text-center">Le grand requin blanc est dans la
+					compétition !</p>
+			</div>
+		</div>
+
+		<br />
+		<div class="row">
+			<div class="col-sm-8">
+				<div class="row justify-content-center">
+					<h1>Des compétitions spectaculaires</h1>
+				</div>
+				<p class="text-center">Nos athlètes représentent nos couleurs
+					dans diverses compétitions.</p>
+			</div>
+			<div class="col-sm-4">
+				<iframe width="560" height="315"
+					src="https://www.youtube.com/embed/Qo4EB4H0Vy8"
+					title="YouTube video player" frameborder="0"
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+					allowfullscreen="true"></iframe>
+				<p class="text-center">Extrait de compétition aux JO de 2008</p>
+			</div>
+		</div>
+	</div>
+	
+<div class="container">
+            	<h1 style="text-align: center; padding-top: 5rem; padding-bottom: 5rem;"> Les membres de la famille ! </h1>
+				
+			
+				<ui:repeat value="#{usersBean.users}" var="user">
+				<div class="card text-white bg-dark mb-3" style="width: 18rem;">
+				<div class="card-header">Membre du club</div>
+  					<div class="card-body">
+    					<h5 class="card-title">Pseudo : #{user.pseudo}</h5>
+    					<p class="card-text">Le nom de ce membre est : #{user.firstname} et son prénom est #{user.name}.<br/>
+    										Contactez le par mail : #{user.mail} ou rendez-lui visite, voici son addresse : #{user.address}</p>
+  					</div>
+				</div>
+				<br/>
+				<br/>
+				</ui:repeat>
+				
+			
+			       
+            </div>
+			
+			    
+</h:body>
+
+
+
+
+<!-- Footer -->
+<footer class="text-center text-lg-start bg-light text-muted">
+	<!-- Section: Social media -->
+	<section
+		class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+		<!-- Left -->
+		<div class="me-5 d-none d-lg-block">
+			<span>Contactez-nous sur les réseaux sociaux :</span>
+		</div>
+		<!-- Left -->
+
+		<!-- Right -->
+		<div>
+			<a href="" class="me-4 text-reset"> <i class="fab fa-facebook-f"></i>
+			</a> <a href="" class="me-4 text-reset"> <i class="fab fa-twitter"></i>
+			</a> <a href="" class="me-4 text-reset"> <i class="fab fa-google"></i>
+			</a> <a href="" class="me-4 text-reset"> <i class="fab fa-instagram"></i>
+			</a> <a href="" class="me-4 text-reset"> <i class="fab fa-linkedin"></i>
+			</a> <a href="" class="me-4 text-reset"> <i class="fab fa-github"></i>
+			</a>
+		</div>
+		<!-- Right -->
+	</section>
+	<!-- Section: Social media -->
+
+	<!-- Section: Links  -->
+	<section class="">
+		<div class="container text-center text-md-start mt-5">
+			<!-- Grid row -->
+			<div class="row mt-3">
+				<!-- Grid column -->
+				<div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+					<!-- Content -->
+					<h6 class="text-uppercase fw-bold mb-4">
+						<i class="fas fa-gem me-3"></i>Club de natation
+					</h6>
+					<p>Club de natation qui a formé plus de 2000 médailles d'or,
+						plus de 3000 médailles d'argent</p>
+				</div>
+				<!-- Grid column -->
+
+				<!-- Grid column -->
+				<div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+					<!-- Links -->
+					<h6 class="text-uppercase fw-bold mb-4">Products</h6>
+					<p>
+						<a href="#!" class="text-reset">Angular</a>
+					</p>
+					<p>
+						<a href="#!" class="text-reset">React</a>
+					</p>
+					<p>
+						<a href="#!" class="text-reset">Vue</a>
+					</p>
+					<p>
+						<a href="#!" class="text-reset">Laravel</a>
+					</p>
+				</div>
+				<!-- Grid column -->
+
+				<!-- Grid column -->
+				<div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+					<!-- Links -->
+					<h6 class="text-uppercase fw-bold mb-4">Useful links</h6>
+					<p>
+						<a href="#!" class="text-reset">Pricing</a>
+					</p>
+					<p>
+						<a href="#!" class="text-reset">Settings</a>
+					</p>
+					<p>
+						<a href="#!" class="text-reset">Orders</a>
+					</p>
+					<p>
+						<a href="#!" class="text-reset">Help</a>
+					</p>
+				</div>
+				<!-- Grid column -->
+
+				<!-- Grid column -->
+				<div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+					<!-- Links -->
+					<h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+					<p>
+						<i class="fas fa-home me-3"></i> Polytech'Tours, 37200 64 Avenue
+						Jean-Portalis
+					</p>
+					<p>
+						<i class="fas fa-envelope me-3"></i> sean.anica@etu.univ-tours.fr
+						juliette.rondeau@etu.univ-tours.fr
+						mahmod.alhabaj@etu.univ-tours.fr
+					</p>
+					<p>
+						<i class="fas fa-phone me-3"></i> + 01 234 567 88
+					</p>
+					<p>
+						<i class="fas fa-print me-3"></i> + 01 234 567 89
+					</p>
+				</div>
+				<!-- Grid column -->
+			</div>
+			<!-- Grid row -->
+		</div>
+	</section>
+	<!-- Section: Links  -->
+
+	<!-- Copyright -->
+	<div class="text-center p-4"
+		style="background-color: rgba(0, 0, 0, 0.05);">
+		© 2021 Copyright: <a class="text-reset fw-bold"
+			href="https://www.youtube.com/">nanationClub.com</a>
+	</div>
+	<!-- Copyright -->
+</footer>
+<!-- Footer -->
+
+</html>
