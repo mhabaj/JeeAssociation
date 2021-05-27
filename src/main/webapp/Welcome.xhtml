@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:h="http://java.sun.com/jsf/html" 
-	xmlns:ui="http://java.sun.com/jsf/facelets" 
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core">
 
 
@@ -38,7 +38,8 @@
 							class="btn btn-danger navbar-btn position-absolute top-0 end-0"
 							action="#{loginBean.logout}" />
 					</h:form></li>
-					<li class="nav-item"><a class="nav-link" href="LivretDeCommentaires.xhtml">Livre d'or</a></li>
+				<li class="nav-item"><a class="nav-link"
+					href="LivretDeCommentaires.xhtml">Livre d'or</a></li>
 			</ul>
 		</div>
 	</nav>
@@ -70,14 +71,17 @@
 				<div class="row justify-content-center">
 					<h1>Présentation de l'association</h1>
 				</div>
-				<p class="text-center">Le club de natation ClubNatation est
-					actif depuis les années 1920, nos petits poissons sillonnent les
-					piscines dans le monde entier. Ayant remportés des milliers de
-					titres internationaux, nos athlètes se démarquent par leur volonté
-					indestructible, de plus, ils sont suivis par les meilleurs coaches
-					aux monde, le club gère tous les aspects de leur vie : santé
-					physique et mentale, marketing, nourriture et performances
-					physiques ! REJOIGNEZ-NOUS ET DEVENEZ UN VERITABLE ATHLETE !</p>
+				<p class="text-center">
+					Le club de natation ClubNatation est actif depuis les années 1920,
+					nos petits poissons sillonnent les piscines dans le monde entier.
+					Ayant remportés des milliers de titres internationaux, nos athlètes
+					se démarquent par leur volonté indestructible, de plus, ils sont
+					suivis par les meilleurs coaches aux monde, le club gère tous les
+					aspects de leur vie : santé physique et mentale, marketing,
+					nourriture et performances physiques ! <br />
+					<br />
+					<strong>REJOIGNEZ-NOUS ET DEVENEZ UN VERITABLE ATHLETE !</strong>
+				</p>
 			</div>
 			<div class="col-sm-4">
 				<img src="resources/img/mylène.png" width="500" height="300" />
@@ -89,7 +93,9 @@
 		<div class="row">
 			<div class="col-sm-8">
 				<div class="row justify-content-center">
-					<h1>Les meilleurs talents du millénaire</h1>
+					<h1>
+						Les <strong>meilleurs</strong> talents du millénaire
+					</h1>
 				</div>
 				<p class="text-center">Nous avons avec nous la référence ultime
 					du crawl à mains libres, le meilleur nageur de tous les temps ,
@@ -110,7 +116,9 @@
 		<div class="row">
 			<div class="col-sm-8">
 				<div class="row justify-content-center">
-					<h1>Des compétitions spectaculaires</h1>
+					<h1>
+						Des compétitions <strong>spectaculaires</strong>
+					</h1>
 				</div>
 				<p class="text-center">Nos athlètes représentent nos couleurs
 					dans diverses compétitions.</p>
@@ -125,29 +133,44 @@
 			</div>
 		</div>
 	</div>
-	
-<div class="container">
-            	<h1 style="text-align: center; padding-top: 5rem; padding-bottom: 5rem;"> Les membres de la famille ! </h1>
-				
-			
-				<ui:repeat value="#{usersBean.users}" var="user">
-				<div class="card text-white bg-dark mb-3" style="width: 18rem;">
+
+	<div class="container">
+		<h1
+			style="text-align: center; padding-top: 5rem; padding-bottom: 5rem;">
+			Les membres de la famille !</h1>
+
+
+		<ui:repeat value="#{usersBean.users}" var="user">
+			<div class="card text-white bg-dark mb-3" style="width: 18rem;">
 				<div class="card-header">Membre du club</div>
-  					<div class="card-body">
-    					<h5 class="card-title">Pseudo : #{user.pseudo}</h5>
-    					<p class="card-text">Le nom de ce membre est : #{user.firstname} et son prénom est #{user.name}.<br/>
-    										Contactez le par mail : #{user.mail} ou rendez-lui visite, voici son addresse : #{user.address}</p>
-  					</div>
+				<div class="card-body">
+					<h5 class="card-title">Pseudo : #{user.pseudo}</h5>
+					<p class="card-text">
+						Le nom de ce membre est : #{user.firstname} et son prénom est
+						#{user.name}.<br /> Contactez le par mail : #{user.mail} ou
+						rendez-lui visite, voici son addresse : #{user.address}
+					</p>
 				</div>
-				<br/>
-				<br/>
-				</ui:repeat>
-				
-			
-			       
-            </div>
-			
-			    
+			</div>
+			<br />
+			<br />
+		</ui:repeat>
+
+
+
+	</div>
+
+	<div class="container">
+		<div class="view overlay">
+			<h3>
+				Quelques statistiques pour prouver notre <strong>valeur</strong>
+			</h3>
+			<br /> <img src="resources/img/statistics.png" class="img-fluid"
+				alt="Notre niveau en stats" />
+		</div>
+	</div>
+
+
 </h:body>
 
 
