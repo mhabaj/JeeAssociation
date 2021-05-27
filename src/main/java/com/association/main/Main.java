@@ -1,7 +1,5 @@
 package com.association.main;
 
-import com.association.dao.Dao;
-
 public class Main {
 
 	public static void main(String[] args) {
