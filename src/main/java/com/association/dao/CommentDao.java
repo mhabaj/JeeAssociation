@@ -17,10 +17,9 @@ public class CommentDao extends Dao {
 	 * 
 	 * @return
 	 */
-	@SuppressWarnings("unchecked")
 	public List<Comment> getAllComments() {
 		List<Comment> returnList = new ArrayList<Comment>();
-		Query query = getEm().createQuery("SELECT e FROM Comment e ORDER BY e.upvoteNumber DESC");
+		Query query = getEm().createQuery("SELECT e FROM Comment e");
 		returnList = query.getResultList();
 
 		return returnList;

@@ -76,22 +76,4 @@ public class UserDao extends Dao {
 		return allUsers;
 	}
 
-	/**
-	 * Détermine si un utilisateur a voté pour un commentaire
-	 * 
-	 * @param userId : int
-	 * @param commentId : int
-	 * @return {true|false} : boolean
-	 */
-	public boolean hasUserUpvotedComment(int userId, int commentId) {
-		Query query = getEm()
-				.createQuery(
-						"SELECT u FROM Upvoting u WHERE user_idUser = :user_idUser AND comment_idComment =:comment_idComment ")
-				.setParameter("user_idUser", userId).setParameter("comment_idComment", commentId);
-		if (query.getResultList().size() != 0) {
-			return true;
-		}
-		return false;
-	}
-
 }
