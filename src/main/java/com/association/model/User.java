@@ -1,13 +1,9 @@
 package com.association.model;
 
-import java.util.List;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
@@ -45,10 +41,7 @@ public class User {
 	@NotNull(message = "Une adresse mail doit être saisie")
 	@Pattern(regexp = "^[a-zA-Z0-9_!#$%&’*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$", message = "veuillez saisir une adresse mail valide")
 	private String mail;
-	
-	@OneToMany(cascade = CascadeType.MERGE, mappedBy = "user") //1 user peut posséder plusieurs commentaires à son nom
-	private List<Comment> commentList;//liste de ses commentaires écrits.
-	
+		
 	
 	/**
 	 * constructeur par défaut
@@ -144,14 +137,6 @@ public class User {
 		this.mail = mail;
 	}
 
-	public List<Comment> getCommentList() {
-		return commentList;
-	}
-
-	public void setCommentList(List<Comment> commentList) {
-		this.commentList = commentList;
-	}
-
 	/****************************************************************************************************/
 
 	/**
@@ -162,8 +147,7 @@ public class User {
 	@Override
 	public String toString() {
 		return "User [idUser=" + idUser + ", pseudo=" + pseudo + ", password=" + password + ", name=" + name
-				+ ", firstname=" + firstname + ", address=" + address + ", mail=" + mail + ", commentList="
-				+ commentList + "]";
+				+ ", firstname=" + firstname + ", address=" + address + ", mail=" + mail + "]";
 	}
 	
 	

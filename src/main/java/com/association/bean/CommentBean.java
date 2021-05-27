@@ -39,9 +39,7 @@ public class CommentBean implements Serializable {
 	public String CommentSomething() {
 		try {
 			InsertDao insertDao = new InsertDao();
-			UserDao userDao = new UserDao();
 			Comment comment = new Comment(this.comment.getContent());
-			comment.setUser(userDao.getUserByLogin(loginBean.getUser().getPseudo()));
 			insertDao.insertObject(comment);
 		} catch (Exception e) {
 			return "Error?faces-redirect=true";

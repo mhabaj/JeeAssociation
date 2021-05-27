@@ -1,12 +1,10 @@
 package com.association.model;
 
 import java.time.LocalDate;
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -22,9 +20,6 @@ public class Comment {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idComment;
-	
-	@ManyToOne(cascade = CascadeType.MERGE)
-	private User user;
 
 	@NotNull(message = "Vous devez saisir votre commentaire")
 	@Size(max = 800, message = "Votre commentaire ne doit pas dépasser 800 caractères")
@@ -77,14 +72,6 @@ public class Comment {
 
 	public void setUpvoteNumber(int upvoteNumber) {
 		this.upvoteNumber = upvoteNumber;
-	}
-	
-	public User getUser() {
-		return user;
-	}
-
-	public void setUser(User user) {
-		this.user = user;
 	}
 	/***************************************************************************************************/
 
