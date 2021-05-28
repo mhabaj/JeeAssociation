@@ -6,6 +6,8 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 import javax.faces.validator.ValidatorException;
 
+import org.mindrot.jbcrypt.BCrypt;
+
 import com.association.dao.InsertDao;
 import com.association.model.User;
 
@@ -34,6 +36,10 @@ public class RegisterBean implements Serializable{
 	public String registerUser()throws ValidatorException{
 		try {
 			InsertDao insertDao = new InsertDao();
+			//hashage de mot de passe
+			String hashed = BCrypt.hashpw(user.getPassword(), BCrypt.gensalt());
+			user.setPassword(hashed);
+			//ajout de l'utilisateur
 			insertDao.insertObject(user);
 		} catch (Exception e) {
 			return "Error";

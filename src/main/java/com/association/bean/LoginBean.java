@@ -6,6 +6,8 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 
+import org.mindrot.jbcrypt.BCrypt;
+
 import com.association.dao.UserDao;
 import com.association.model.User;
 
@@ -34,7 +36,10 @@ public class LoginBean implements Serializable{
 	public String isUserValid() {
 		try {
 			UserDao UserDao = new UserDao();
-			if (UserDao.isAuthentified(user.getPseudo(), user.getPassword()))
+			//vérification du mot de passe
+			User userToTest = new User();
+			userToTest = UserDao.getUserByLogin(user.getPseudo());//on cherche l'utilisateur dans la base de données
+			if (BCrypt.checkpw(user.getPassword(), userToTest.getPassword()))//on le compare au mot de passe rentré
 				return "Welcome?faces-redirect=true";
 			else
 				setErrorMessage(UNMATCHED);

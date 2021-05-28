@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le :  ven. 28 mai 2021 à 00:06
+-- Généré le :  ven. 28 mai 2021 à 10:35
 -- Version du serveur :  5.7.17
 -- Version de PHP :  7.1.3
 
@@ -64,7 +64,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`idUser`, `address`, `firstname`, `mail`, `name`, `password`, `pseudo`) VALUES
-(1, 'une adresse', 'sean', 'seananica1@gmail.com', 'anica', 'azertyui', 'user1');
+(3, '7 allée guy charff résidence technopole', 'sean', 'seananica1@gmail.com', 'anica', '$2a$10$btoH3XzCt9pOWl1fJDRQb.8w7.pS7/lQyPzc1ag.kBMGqIhczh9Pi', 'sean');
 
 --
 -- Index pour les tables déchargées
@@ -95,7 +95,7 @@ ALTER TABLE `comment`
 -- AUTO_INCREMENT pour la table `user`
 --
 ALTER TABLE `user`
-  MODIFY `idUser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;COMMIT;
+  MODIFY `idUser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
