@@ -20,18 +20,16 @@ public class CommentDao extends Dao {
 	@SuppressWarnings("unchecked")
 	public List<Comment> getAllComments() {
 		List<Comment> returnList = new ArrayList<Comment>();
-		Query query = getEm().createQuery("SELECT e FROM Comment e ORDER BY e.upvoteNumber DESC");
+		Query query = getEm().createQuery("SELECT e FROM Comment e ORDER BY UpvoteNumber DESC");
 		returnList = query.getResultList();
-
 		return returnList;
 	}
-
+	
 	/**
-	 * Met à jour le compteur de votes d'un commentaire
-	 * 
-	 * @param content : String
+	 * Augmenter le nombre de likes d'un commentaire de 1
+	 * @param content
 	 */
-	public void updateCompteur(String content) {
+	public void updateCommentLikes(String content) {
 		try {
 			Comment comment = getEm().find(Comment.class, FindIdByContent(content));
 			getEm().getTransaction().begin();
@@ -40,6 +38,25 @@ public class CommentDao extends Dao {
 			getEm().flush();
 			getEm().getTransaction().commit();
 
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+	}
+	
+	/**
+	 * baisser le nombre de likes d'un commentaire de 1
+	 * @param content
+	 */
+	public void updateCommentDislikes(String content) {
+		try {
+			Comment comment = getEm().find(Comment.class, FindIdByContent(content));
+			if(comment.getUpvoteNumber() > 0) {
+				getEm().getTransaction().begin();
+				comment.setUpvoteNumber(comment.getUpvoteNumber() - 1);
+				getEm().merge(comment);
+				getEm().flush();
+				getEm().getTransaction().commit();
+			}
 		} catch (Exception e) {
 			System.out.println(e);
 		}

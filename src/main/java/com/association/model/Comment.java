@@ -1,15 +1,10 @@
 package com.association.model;
 
 import java.time.LocalDate;
-import java.util.List;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -25,9 +20,6 @@ public class Comment {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idComment;
-	
-	@ManyToOne(cascade = CascadeType.MERGE)
-	private User user;
 
 	@NotNull(message = "Vous devez saisir votre commentaire")
 	@Size(max = 800, message = "Votre commentaire ne doit pas dépasser 800 caractères")
@@ -36,9 +28,6 @@ public class Comment {
 	private LocalDate date;
 
 	private int upvoteNumber;
-
-	@OneToMany(cascade = CascadeType.MERGE, mappedBy = "comment")
-	private List<Upvoting> upvoting; // le commentaire a sa liste d'upvotes qui lui sont associés.
 	
 	/**
 	 * constructeur par défaut
@@ -83,23 +72,6 @@ public class Comment {
 
 	public void setUpvoteNumber(int upvoteNumber) {
 		this.upvoteNumber = upvoteNumber;
-	}
-
-	public List<Upvoting> getUpvoting() {
-		return upvoting;
-	}
-
-	public void setUpvoting(List<Upvoting> upvoting) {
-		this.upvoting = upvoting;
-	}
-	
-	
-	public User getUser() {
-		return user;
-	}
-
-	public void setUser(User user) {
-		this.user = user;
 	}
 	/***************************************************************************************************/
 

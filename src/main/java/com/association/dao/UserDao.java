@@ -2,11 +2,8 @@ package com.association.dao;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.persistence.Query;
 
-import com.association.model.Comment;
-import com.association.model.Upvoting;
 import com.association.model.User;
 
 /**
@@ -76,45 +73,7 @@ public class UserDao extends Dao {
 	public List<User> getAllUsers(){
 		List<User> allUsers = new ArrayList<User>();
 		allUsers = getEm().createQuery("SELECT u FROM User u", User.class).getResultList();
-		
-		//selectionner ses commentaires et ses upvotes
-		List<Comment> commentsOfThisUser = new ArrayList<Comment>();
-		List<Upvoting> upvotingsOfThisUser = new ArrayList<Upvoting>(); 
-		for(User currentUser : allUsers) {
-			//commentaires
-			Query query = getEm().createQuery("SELECT e FROM Comment e WHERE user_idUser= :user_idUser ORDER BY e.upvoteNumber DESC")
-					.setParameter("user_idUser", currentUser.getIdUser());
-			if(query.getResultList().size() != 0) {
-				commentsOfThisUser = query.getResultList();
-				currentUser.setCommentList(commentsOfThisUser);
-			}
-			//upvotes
-			Query query2 = getEm().createQuery("SELECT v FROM Upvoting v WHERE user_idUser= :user_idUser")
-					.setParameter("user_idUser", currentUser.getIdUser());
-			if(query2.getResultList().size() != 0) {
-				upvotingsOfThisUser = query2.getResultList();
-				currentUser.setUpvotingList(upvotingsOfThisUser);
-			}
-		}
 		return allUsers;
-	}
-
-	/**
-	 * Détermine si un utilisateur a voté pour un commentaire
-	 * 
-	 * @param userId : int
-	 * @param commentId : int
-	 * @return {true|false} : boolean
-	 */
-	public boolean hasUserUpvotedComment(int userId, int commentId) {
-		Query query = getEm()
-				.createQuery(
-						"SELECT u FROM Upvoting u WHERE user_idUser = :user_idUser AND comment_idComment =:comment_idComment ")
-				.setParameter("user_idUser", userId).setParameter("comment_idComment", commentId);
-		if (query.getResultList().size() != 0) {
-			return true;
-		}
-		return false;
 	}
 
 }

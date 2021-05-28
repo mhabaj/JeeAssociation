@@ -14,7 +14,6 @@
 		rel="stylesheet"
 		integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
 		crossorigin="anonymous" />
-	<!--<h:outputStylesheet library="bootstrap" name="css/style.css" />-->
 </h:head>
 
 
@@ -33,11 +32,6 @@
 						src="resources/img/Logo.jpg" width="30" height="30" alt="Logo" /></a></li>
 				<li class="nav-item"><a class="nav-link" href="Apropos.xhtml">à
 						propos</a></li>
-				<li class="nav-item"><h:form>
-						<h:commandLink value="Se Déconnecter" style="margin: 1rem;"
-							class="btn btn-danger navbar-btn position-absolute top-0 end-0"
-							action="#{loginBean.logout}" />
-					</h:form></li>
 				<li class="nav-item"><a class="nav-link"
 					href="LivretDeCommentaires.xhtml">Livre d'or</a></li>
 			</ul>
@@ -46,7 +40,7 @@
 
 	<!--Center heroes avec une image-->
 	<div class="px-4 pt-5 my-5 text-center border-bottom">
-		<h1 class="display-4 fw-bold">Bonjour, #{loginBean.user.pseudo}</h1>
+		<h1 class="display-4 fw-bold">Bonjour, visiteur</h1>
 		<div class="col-lg-6 mx-auto">
 			<p class="lead mb-4">Bienvenue sur le site de votre club de
 				natation préféré, ici d'innombrables champions ont été exposés à la
@@ -170,10 +164,7 @@
 		</div>
 	</div>
 
-
 </h:body>
-
-
 
 
 <!-- Footer -->

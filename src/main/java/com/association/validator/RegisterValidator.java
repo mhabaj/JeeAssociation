@@ -19,7 +19,6 @@ import com.association.dao.UserDao;
 public class RegisterValidator implements Validator{
 	private final String ALREADY_EXIST = "Cette adresse mail existe déjà";
 	private UserDao userDao;
-	@Override
 	public void validate(FacesContext context, UIComponent component, Object value) throws ValidatorException {
 		String email = (String) value;//récupération de la valeur à traiter avec value
 		userDao = new UserDao();

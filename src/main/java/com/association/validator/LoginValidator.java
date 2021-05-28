@@ -21,7 +21,6 @@ public class LoginValidator implements Validator{
 
 	private UserDao userDao;
 	
-	@Override
 	public void validate(FacesContext context, UIComponent component, Object value) throws ValidatorException {
 		String pseudo = (String) value;//récupération de la valeur à traiter avec value
 		userDao = new UserDao();
