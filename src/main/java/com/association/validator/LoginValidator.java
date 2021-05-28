@@ -25,6 +25,7 @@ public class LoginValidator implements Validator{
 		String pseudo = (String) value;//récupération de la valeur à traiter avec value
 		userDao = new UserDao();
 		try {
+			
 			if(userDao.getUserByLogin(pseudo) != null) {
 				//si : l'utilisateur est trouvé à partir de son pseudo, il existe déjà donc on retourne une exception
 				new FacesMessage(FacesMessage.SEVERITY_ERROR, ALREADY_EXIST, null);
