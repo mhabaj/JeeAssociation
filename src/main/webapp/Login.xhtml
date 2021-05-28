@@ -1,19 +1,27 @@
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:h="http://java.sun.com/jsf/html">
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
 
 
 <h:head>
 	<meta charset="utf-8" />
 	<title>Connexion</title>
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous"/>
+	<h:outputStylesheet name="css/style.css" />
+	<link
+		href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+		rel="stylesheet"
+		integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+		crossorigin="anonymous" />
 	<!--<h:outputStylesheet library="bootstrap" name="css/bootstrap.css" />-->
+
 </h:head>
 
 
 <h:body>
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<!--  <nav class="navbar navbar-expand-lg navbar-light bg-light">
 		<a class="navbar-brand" href="#"></a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse"
 			data-target="#navbarNav" aria-controls="navbarNav"
@@ -22,18 +30,30 @@
 		</button>
 		<div class="collapse navbar-collapse" id="navbarNav">
 			<ul class="navbar-nav">
-				<li class="nav-item active"><a href="Login.xhtml"><img src="resources/img/Logo.jpg" width="30" height="30" alt="Logo"/></a></li>
-				<li class="nav-item"><a href="Register.xhtml" class="btn btn-success position-absolute top-0 end-0" style="margin: 1rem;">S'inscrire</a></li>
+				<li class="nav-item active"><a href="Login.xhtml"><img
+						src="resources/img/Logo.jpg" width="30" height="30" alt="Logo" /></a></li>
+				<li class="nav-item"><a href="Register.xhtml"
+					class="btn btn-success position-absolute top-0 end-0"
+					style="margin: 1rem;">S'inscrire</a></li>
 			</ul>
 		</div>
-	</nav>
+	</nav>-->
+
+	<div class="card">
+		<h:form>
+			<p:growl id="messages" />
+
+			<p:menubar>
+				<p:menuitem value="home" icon="pi pi-home" url="Login.xhtml" />
+			</p:menubar>
+		</h:form>
+	</div>
 
 
 	<div class="container">
 		<h:form id="loginForm" class="form-signin">
 			<fieldset>
 				<legend>Connexion</legend>
-
 
 				<div class="form-group">
 					Login:
@@ -60,10 +80,11 @@
 					render="#{loginBean.errorMessage != null}" />
 			</fieldset>
 		</h:form>
-		<br/>
-		<a class="btn btn-success" href="Register.xhtml">S'inscrire</a>
-		<a class="btn btn-success" href="WelcomeVisitor.xhtml">Visiter le site en tant que visiteur</a>
-		
+		<br /> <a class="btn btn-success" href="Register.xhtml">S'inscrire</a>
+		<a class="btn btn-success" href="WelcomeVisitor.xhtml">Visiter le
+			site en tant que visiteur</a>
 	</div>
+
+
 </h:body>
 </html>
