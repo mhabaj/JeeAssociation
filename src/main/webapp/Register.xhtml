@@ -3,6 +3,7 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:p="http://primefaces.org/ui">
+
 <h:head>
 	<meta charset="utf-8" />
 	<title>Inscription</title>
@@ -44,7 +45,7 @@
 			<p:menubar>
 				<p:menuitem value="home" icon="home" url="Login.xhtml" />
 				<p:menuitem value="à propos" icon="" url="Apropos.xhtml" />
-				 <p:divider layout="vertical"/>
+				<p:divider layout="vertical" />
 				<p:menuitem value="Se connecter" icon="" url="Login.xhtml" />
 			</p:menubar>
 		</h:form>
@@ -57,8 +58,8 @@
 				<div class="form-group">
 					<h:outputLabel for="nom">Nom d'utilisateur :</h:outputLabel>
 					<h:inputText id="nom" value="#{registerBean.user.pseudo}"
-						class="form-control" size="20" maxlength="20" label="Pseudo" required="true">
-						<f:validator validatorId="loginValidator" />
+						class="form-control" size="20" maxlength="20" label="Pseudo">
+						<f:validator binding="#{pseudoValidator}" />
 					</h:inputText>
 					<h:message id="nomMessage" for="nom" class="text-danger" />
 					<br />
@@ -67,7 +68,7 @@
 					<h:outputLabel for="motdepasse">Mot de passe (8 caractères min):</h:outputLabel>
 					<h:inputSecret id="motdepasse"
 						value="#{registerBean.user.password}" class="form-control"
-						size="20" maxlength="20" label="Mot de Passe" required="true"/>
+						size="20" maxlength="20" label="Mot de Passe" />
 					<h:message id="motDePasseMessage" for="motdepasse"
 						class="text-danger" />
 					<br />
@@ -75,14 +76,14 @@
 				<div class="form-group">
 					<h:outputLabel for="name">Nom :</h:outputLabel>
 					<h:inputText id="name" value="#{registerBean.user.name}"
-						class="form-control" size="20" maxlength="20" label="Nom" required="true"/>
+						class="form-control" size="20" maxlength="20" label="Nom" />
 					<h:message id="nameMessage" for="name" class="text-danger" />
 					<br />
 				</div>
 				<div class="form-group">
 					<h:outputLabel for="firstname">Prénom :</h:outputLabel>
 					<h:inputText id="firstname" value="#{registerBean.user.firstname}"
-						class="form-control" size="20" maxlength="20" label="Prenom" required="true"/>
+						class="form-control" size="20" maxlength="20" label="Prenom" />
 					<h:message id="firstnameMessage" for="firstname"
 						class="text-danger" />
 					<br />
@@ -90,26 +91,25 @@
 				<div class="form-group">
 					<h:outputLabel for="address">Adresse :</h:outputLabel>
 					<h:inputText id="address" value="#{registerBean.user.address}"
-						class="form-control" size="20" maxlength="60" label="Adresse" required="true"/>
+						class="form-control" size="20" maxlength="60" label="Adresse" />
 					<h:message id="addressMessage" for="address" class="text-danger" />
 					<br />
 				</div>
 
 				<div class="form-group">
-					<h:outputLabel for="email">Adresse email :</h:outputLabel>
-					<h:inputText id="email" value="#{registerBean.user.mail}"
-						class="form-control" size="20" maxlength="60" label="Email" required="true">
-						<f:validator validatorId="registerValidator"/>
-					</h:inputText>
-					<h:message id="emailMessage" for="email" class="text-danger" />
+					<h:outputLabel for="mail">Adresse email :</h:outputLabel>
+					<h:inputText id="mail" value="#{registerBean.user.mail}"
+						class="form-control" size="20" maxlength="60"  label="Email" />
+					<h:message id="mailMessage" for="mail" class="text-danger"
+						errorClass="text-danger" />
 					<br />
 				</div>
 
 				<h:messages globalOnly="true" infoClass="info" />
 
-				<h:commandButton class="btn btn-success rounded-pill" value="Valider"
-					action="#{registerBean.registerUser()}" styleClass="sansLabel"
-					update="nomMessage" />
+				<h:commandButton class="btn btn-success rounded-pill"
+					value="Valider" action="#{registerBean.registerUser()}"
+					styleClass="sansLabel" update="nomMessage" />
 				<br />
 			</fieldset>
 		</h:form>
