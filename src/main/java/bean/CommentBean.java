@@ -99,7 +99,59 @@ public class CommentBean implements Serializable {
 	public void setComment(Comment comment) {
 		this.comment = comment;
 	}
+	
 	/****************************************************************************************************************************/
-
+	/**
+	 * Ajouter un commentaire à la base de données en tant que visiteur.
+	 * @return redirection : String 
+	 */
+	public String CommentSomethingAsVisitor() {
+		try {
+			InsertDao insertDao = new InsertDao();
+			Comment comment = new Comment(this.comment.getContent());
+			insertDao.insertObject(comment);
+		} catch (Exception e) {
+			return "Error?faces-redirect=true";
+		}
+		return "Comments?faces-redirect=true";
+	}
+	
+	/**
+	 * permet de liker un commentaire et de mettre à jour le nombre de likes dans la base de données en tant que visiteur.
+	 * @param content
+	 * @return
+	 */
+	public String likeACommentAsVisitor(String content) {
+		try {
+			CommentDao commentDao = new CommentDao();
+			for(Comment comment : comments) {
+				if(content.equals(comment.getContent())) {
+					commentDao.updateCommentLikes(content);
+				}
+			}
+		}catch(Exception e) {
+			return "Erreur?faces-redirect=true";
+		}
+		return "LivretDeCommentairesVisitor?faces-redirect=true";
+	}
+	
+	/**
+	 * permet de disliker un commentaire et de mettre à jour le nombre de likes dans la base de données en tant que visiteur.
+	 * @param content
+	 * @return
+	 */
+	public String dislikeACommentAsVisitor(String content) {
+		try {
+			CommentDao commentDao = new CommentDao();
+			for(Comment comment : comments) {
+				if(content.equals(comment.getContent())) {
+					commentDao.updateCommentDislikes(content);
+				}
+			}
+		}catch(Exception e) {
+			return "Erreur?faces-redirect=true";
+		}
+		return "LivretDeCommentairesVisitor?faces-redirect=true";
+	}
 	
 }

@@ -24,10 +24,12 @@
 		<h:form>
 			<p:growl id="messages" />
 			<p:menubar>
-				<p:menuitem value="home" icon="home" url="Welcome.xhtml" />
-				<p:menuitem value="à propos" icon="pi pi-question" url="Apropos.xhtml" />
-				<p:menuitem value="Livre d'or" icon="pi pi-book" url="LivretDeCommentaires.xhtml"/>
-				<p:menuitem value="Se déconnecter" icon="pi pi-fw pi-sign-out" action="#{loginBean.logout}"/>
+				<p:menuitem value="home" icon="home" url="WelcomeVisitor.xhtml" />
+				<p:menuitem value="à propos" icon="pi pi-question" url="AproposVisitor.xhtml" />
+				<p:menuitem value="Livre d'or" icon="pi pi-book" url="LivretDeCommentairesVisitor.xhtml"></p:menuitem>
+				<p:divider layout="vertical" />
+				<p:menuitem value="Se connecter" icon="pi pi-fw pi-sign-in" url="Login.xhtml" />
+				<p:menuitem value="Créer un compte" icon="pi pi-fw pi-user-plus" url="Register.xhtml" />
 			</p:menubar>
 		</h:form>
 	</div>
@@ -51,9 +53,9 @@
 			</figure>
 			<h:form>
 				<h:commandLink value="liker" class="btn btn-primary"
-					action="#{commentBean.likeAComment(comment.content)}" />
+					action="#{commentBean.likeACommentAsVisitor(comment.content)}" />
 				<h:commandLink value="disliker" class="btn btn-danger"
-					action="#{commentBean.dislikeAComment(comment.content)}" />
+					action="#{commentBean.dislikeACommentAsVisitor(comment.content)}" />
 			</h:form>
 
 		</ui:repeat>
@@ -77,7 +79,7 @@
 
 				<h:messages globalOnly="true" infoClass="info" />
 				<h:commandButton class="btn btn-info"
-					action="#{commentBean.CommentSomething}" value="Ajouter" />
+					action="#{commentBean.CommentSomethingAsVisitor}" value="Ajouter" />
 				<br />
 
 			</fieldset>

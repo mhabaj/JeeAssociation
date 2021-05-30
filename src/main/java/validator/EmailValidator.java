@@ -41,6 +41,5 @@ public class EmailValidator implements Validator {
 			FacesContext facesContext = FacesContext.getCurrentInstance();
 			facesContext.addMessage(component.getClientId(facesContext), message);
 		}
-
 	}
 }

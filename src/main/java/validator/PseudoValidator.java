@@ -11,13 +11,23 @@ import javax.faces.validator.ValidatorException;
 
 import dao.UserDao;
 
+/**
+ * classe de validation du pseudo dans le formulaire.
+ * @author sean anica, alhabaj mahmod, rondeau juliette
+ * @version 5.0
+ *
+ */
 @ManagedBean
 @RequestScoped
 public class PseudoValidator implements Validator {
+	//Attributs
 	final String ALREADY_EXISTS = "Ce pseudo est déjà utilisé";
 	@EJB
 	private UserDao userDao;
 
+	/**
+	 * fonction permettant de valider un champs du formulaire d'enregistrement.
+	 */
 	@Override
 	public void validate(FacesContext context, UIComponent component, Object value) throws ValidatorException {
 		String pseudo = (String) value;
