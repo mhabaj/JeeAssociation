@@ -34,30 +34,31 @@
 		</h:form>
 	</div>
 
-	<!-- Affichage des commentaires de la communauté -->
+		<!-- Affichage des commentaires de la communauté -->
 	<div class="container">
-		<p>Commentaires de la communauté:</p>
+		<h1>Commentaires de la communauté:</h1>
 		<ui:repeat value="#{commentBean.comments}" var="comment">
-
-			<figure>
-				<blockquote class="blockquote">
-					<p>
-						<h:outputText class="text-justify" value="#{comment.content}" />
-					</p>
-				</blockquote>
-				<figcaption class="blockquote-footer">
-					commenté le : <cite title="Source Title"> #{comment.date}</cite>
-					Nombre de likes : <cite title="likes">
-						#{comment.upvoteNumber}</cite>
-				</figcaption>
-			</figure>
-			<h:form>
-				<h:commandLink value="liker" class="btn btn-primary"
-					action="#{commentBean.likeACommentAsVisitor(comment.content)}" />
-				<h:commandLink value="disliker" class="btn btn-danger"
-					action="#{commentBean.dislikeACommentAsVisitor(comment.content)}" />
-			</h:form>
-
+			<p:card style="width: 25em; background:  #C6E2FF;">
+				<f:facet name="title">
+       					 Commentaire du : #{comment.date}
+    			</f:facet>
+				<f:facet name="subtitle">
+        				Nombre de likes : #{comment.upvoteNumber}
+    			</f:facet>
+				<p>
+					<h:outputText class="text-justify" value="#{comment.content}" />
+				</p>
+				<f:facet name="footer">
+					<h:form>
+						<h:commandLink value="liker" class="btn btn-primary"
+							action="#{commentBean.likeAComment(comment.content)}" />
+						<h:commandLink value="disliker" class="btn btn-danger"
+							action="#{commentBean.dislikeAComment(comment.content)}" />
+					</h:form>
+				</f:facet>
+			</p:card>
+			<br/>
+			<br/>
 		</ui:repeat>
 	</div>
 
