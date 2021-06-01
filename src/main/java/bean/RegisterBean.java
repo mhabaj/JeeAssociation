@@ -30,18 +30,20 @@ public class RegisterBean implements Serializable{
 	 */
 	private static final long serialVersionUID = 2135191050019499896L;
 	//Attributs
-	
 	private User user;
 	
 	@EJB
 	private UserDao userDao;
 	
+	/**
+	 * Constructeur par défaut de la classe RegisterBean.
+	 */
 	public RegisterBean() {
 		user = new User();
 	}
 	/**
 	 * \brief permet de créer le compte d'un utilisateur.
-	 * @return
+	 * @return redirectionDePage : String
 	 * @throws ValidatorException
 	 */
 	public String registerUser()throws ValidatorException{

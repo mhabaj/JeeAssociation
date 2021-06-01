@@ -51,8 +51,10 @@
 				</p>
 				<f:facet name="footer">
 					<h:form>
+					<!-- bouton pour liker le commentaire -->
 						<h:commandLink value="liker" class="btn btn-primary"
 							action="#{commentBean.likeAComment(comment.content)}" />
+							<!-- bouton pour disliker le commentaire -->
 						<h:commandLink value="disliker" class="btn btn-danger"
 							action="#{commentBean.dislikeAComment(comment.content)}" />
 					</h:form>
@@ -78,6 +80,7 @@
 				</div>
 
 				<h:messages globalOnly="true" infoClass="info" />
+				<!-- bouton pour ajouter le commentaire à la base de données -->
 				<h:commandButton class="btn btn-info"
 					action="#{commentBean.CommentSomething}" value="Ajouter" />
 				<br />
@@ -85,7 +88,6 @@
 			</fieldset>
 		</h:form>
 	</div>
-
 
 
 	<!-- Footer -->

@@ -12,7 +12,7 @@ import model.Comment;
 
 /**
  * \brief classe Comment bean permettant à l'utilisateur de poster, consulter les commentaires du livre d'or.
- * @author sean anica, juliette rondeau, alhabaj mahmod
+ * @author sean anica, rondeau juliette, alhabaj mahmod
  *
  */
 @ManagedBean
@@ -44,8 +44,8 @@ public class CommentBean implements Serializable {
 	
 	/**
 	 * permet de liker un commentaire et de mettre à jour le nombre de likes dans la base de données.
-	 * @param content
-	 * @return
+	 * @param content : String
+	 * @return redirectionDePage : String
 	 */
 	public String likeAComment(String content) {
 		try {
@@ -63,8 +63,8 @@ public class CommentBean implements Serializable {
 	
 	/**
 	 * permet de disliker un commentaire et de mettre à jour le nombre de likes dans la base de données.
-	 * @param content
-	 * @return
+	 * @param content : String
+	 * @return redirectionDePage : String
 	 */
 	public String dislikeAComment(String content) {
 		try {
@@ -82,20 +82,36 @@ public class CommentBean implements Serializable {
 	
 
 	/********************************************GETTERS ET SETTERS DE LA CLASSE********************************************/
+	/**
+	 * Getter qui initialise la liste de tous les commentaires de la base de données.
+	 * @return comments : List<Comment>
+	 */
 	public List<Comment> getComments() {
 		CommentDao commentDao = new CommentDao();
 		comments = commentDao.getAllComments();
 		return comments;
 	}
 
+	/**
+	 * Setter de la liste de commentaires 
+	 * @param comments : List<Comment>
+	 */
 	public void setComments(List<Comment> comments) {
 		this.comments = comments;
 	}
 
+	/**
+	 * Getter de l'attribut comment de la classe bean.
+	 * @return comment : Comment
+	 */
 	public Comment getComment() {
 		return comment;
 	}
 
+	/**
+	 * Setter de l'attribut comment de la classe bean.
+	 * @param comment : Comment
+	 */
 	public void setComment(Comment comment) {
 		this.comment = comment;
 	}
@@ -118,8 +134,8 @@ public class CommentBean implements Serializable {
 	
 	/**
 	 * permet de liker un commentaire et de mettre à jour le nombre de likes dans la base de données en tant que visiteur.
-	 * @param content
-	 * @return
+	 * @param content : String
+	 * @return redirectionDePage : String
 	 */
 	public String likeACommentAsVisitor(String content) {
 		try {
@@ -137,8 +153,8 @@ public class CommentBean implements Serializable {
 	
 	/**
 	 * permet de disliker un commentaire et de mettre à jour le nombre de likes dans la base de données en tant que visiteur.
-	 * @param content
-	 * @return
+	 * @param content : String
+	 * @return redirectionDePage : String
 	 */
 	public String dislikeACommentAsVisitor(String content) {
 		try {

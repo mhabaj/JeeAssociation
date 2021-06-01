@@ -15,27 +15,26 @@ import bean.LoginBean;
 
 
 /**
- * Servlet Filter implementation class LoginFilter
+ * Servlet Filter implementation class LoginFilter. Classe de filtre de connexion de l'utilisateur.
+ * @author sean anica, juliette rondeau, mahmodd alhabaj.
  */
-
 @WebFilter(urlPatterns = { "/Comments.xhtml", "/Welcome.xhtml" })
 public class LoginFilter implements Filter {
 
 	/**
-	 * Default constructor.
+	 * Default constructor of the class.
 	 */
 	public LoginFilter() {
-		// TODO Auto-generated constructor stub
 	}
 
 	/**
 	 * @see Filter#destroy()
 	 */
 	public void destroy() {
-		// TODO Auto-generated method stub
 	}
 
 	/**
+	 * méthode qui permet de filtrer les connexions et les sessions actives.
 	 * @see Filter#doFilter(ServletRequest, ServletResponse, FilterChain)
 	 */
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
@@ -52,16 +51,13 @@ public class LoginFilter implements Filter {
 				res.sendRedirect("Login.xhtml");
 			}
 		}
-
 		chain.doFilter(request, response);
-
 	}
 
 	/**
 	 * @see Filter#init(FilterConfig)
 	 */
 	public void init(FilterConfig fConfig) throws ServletException {
-		// TODO Auto-generated method stub
 	}
 
 }

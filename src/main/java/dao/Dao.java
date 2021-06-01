@@ -25,7 +25,7 @@ public class Dao {
 	
 	/**
 	 * getter de l'attribut entity manager
-	 * @return em
+	 * @return em : EntityManager
 	 */
 	public EntityManager getEm() {
 		return em;
@@ -33,7 +33,7 @@ public class Dao {
 
 	/**
 	 * setter de l'attribut entity manager
-	 * @param em
+	 * @param em : EntityManager
 	 */
 	public void setEm(EntityManager em) {
 		this.em = em;

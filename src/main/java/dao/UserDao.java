@@ -8,13 +8,14 @@ import model.User;
 
 /**
  * \brief classe DAO qui permet d'effectuer des requêtes à la base de données en fonction des tables associées à l'utilisateur.
- * @author sayen
+ * @author sean anica, juliette rondeau, mahmod alhabaj
+ * @version 3.0
  *
  */
 public class UserDao extends Dao {
 	
 	/**
-	 * constructeur par défaut de la classe UserDao
+	 * constructeur par défaut de la classe UserDao.
 	 */
 	public UserDao() {
 		super();

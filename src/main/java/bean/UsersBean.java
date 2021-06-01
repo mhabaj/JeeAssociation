@@ -22,11 +22,12 @@ public class UsersBean implements Serializable{
 	 * 
 	 */
 	private static final long serialVersionUID = -6753602910444382594L;
+	//Attributs
 	private List<User> users;
 	
 	/**
 	 * getter de l'attribut users
-	 * @return users
+	 * @return users : List<User>
 	 */
 	public List<User> getUsers() {
 		UserDao userDao = new UserDao();
@@ -36,7 +37,7 @@ public class UsersBean implements Serializable{
 
 	/**
 	 * setter de l'attribut users
-	 * @param users
+	 * @param users List<User>
 	 */
 	public void setUsers(List<User> users) {
 		this.users = users;

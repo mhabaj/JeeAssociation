@@ -30,6 +30,7 @@
 		</h:form>
 	</div>
 
+<!-- formulaire de création de compte utilisateur -->
 	<div class="container">
 		<h:form>
 			<fieldset>
@@ -87,7 +88,7 @@
 				</div>
 
 				<h:messages globalOnly="true" infoClass="info" />
-
+				<!-- bouton permettant de s'insrire sur le site -->
 				<h:commandButton class="btn btn-success rounded-pill"
 					value="Valider" action="#{registerBean.registerUser()}"
 					styleClass="sansLabel" update="nomMessage" />

@@ -12,7 +12,8 @@ import model.User;
 
 /**
  * \brief classe bean de login qui permet aux utilisateurs de se connecter.
- * @author sayen
+ * @author sean anica, juliette rondeau, mahmod alhabaj
+ * @version 6.0
  *
  */
 @ManagedBean(name = "loginBean", eager = true)
@@ -79,7 +80,7 @@ public class LoginBean implements Serializable{
 	
 	/**
 	 * Getter de l'attribut user.
-	 * @return
+	 * @return user : User
 	 */
 	public User getUser() {
 		return this.user;
@@ -87,7 +88,7 @@ public class LoginBean implements Serializable{
 	
 	/**
 	 * Setter de l'attribut user.
-	 * @param user
+	 * @param user : User
 	 */
 	public void setUser(User user) {
 		this.user = user;

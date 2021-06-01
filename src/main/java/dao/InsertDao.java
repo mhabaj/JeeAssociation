@@ -6,6 +6,7 @@ package dao;
  *
  */
 public class InsertDao extends Dao {
+	
 	/**
 	 * constructeur par défaut de la classe InsertDao.
 	 */
@@ -14,7 +15,7 @@ public class InsertDao extends Dao {
 		}
 
 	/**
-	 * Insertion d'un objet dans la base de données
+	 * Insertion d'un objet dans la base de données.
 	 * 
 	 * @param o : Object
 	 */
@@ -25,7 +26,7 @@ public class InsertDao extends Dao {
 	}
 
 	/**
-	 * Insertion d'un objet dans la base de données
+	 * Insertion d'un objet dans la base de données.
 	 * 
 	 * @param o : Object
 	 */

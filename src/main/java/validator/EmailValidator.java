@@ -13,7 +13,7 @@ import dao.UserDao;
 
 /**
  * \brief classe des validateurs de register, permet de vérifier la validité des
- * données d'inscription.
+ * 			données d'inscription.
  * 
  * @author sean anica, juliette rondeau, alhabaj mahmod
  * @version 1.0

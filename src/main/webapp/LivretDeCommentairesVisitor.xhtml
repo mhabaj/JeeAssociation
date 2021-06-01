@@ -54,8 +54,10 @@
 				</p>
 				<f:facet name="footer">
 					<h:form>
+					<!-- bouton pour liker un commentaire -->
 						<h:commandLink value="liker" class="btn btn-primary"
 							action="#{commentBean.likeACommentAsVisitor(comment.content)}" />
+							<!-- bouton pour disliker un commentaire -->
 						<h:commandLink value="disliker" class="btn btn-danger"
 							action="#{commentBean.dislikeACommentAsVisitor(comment.content)}" />
 					</h:form>
@@ -81,6 +83,7 @@
 				</div>
 
 				<h:messages globalOnly="true" infoClass="info" />
+				<!-- bouton pour ajouter le commentaire écrit -->
 				<h:commandButton class="btn btn-info"
 					action="#{commentBean.CommentSomethingAsVisitor}" value="Ajouter" />
 				<br />
