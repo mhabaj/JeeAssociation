@@ -10,26 +10,30 @@
 <h:head>
 	<meta charset="utf-8" />
 	<title>Welcome</title>
+	<h:outputStylesheet name="css/style.css" />
+
 	<link
 		href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
 		rel="stylesheet"
 		integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
 		crossorigin="anonymous" />
-	<h:outputStylesheet name="css/style.css" />
 </h:head>
 
 
 <h:body>
-		<!-- barre de navigation -->
+	<!-- barre de navigation -->
 	<div class="card">
 		<h:form>
 			<p:growl id="messages" />
 			<p:menubar>
 				<p:menuitem value="home" icon="home" url="Welcome.xhtml" />
-				<p:menuitem value="à propos" icon="pi pi-question" url="Apropos.xhtml"/>
-				<p:menuitem value="Livre d'or" icon="pi pi-book" url="LivretDeCommentaires.xhtml"></p:menuitem>
+				<p:menuitem value="à propos" icon="pi pi-question"
+					url="Apropos.xhtml" />
+				<p:menuitem value="Livre d'or" icon="pi pi-book"
+					url="LivretDeCommentaires.xhtml"></p:menuitem>
 				<p:divider layout="vertical" />
-				<p:menuitem value="Se déconnecter" icon="pi pi-fw pi-sign-out" action="#{loginBean.logout}"/>
+				<p:menuitem value="Se déconnecter" icon="pi pi-fw pi-sign-out"
+					action="#{loginBean.logout}" />
 			</p:menubar>
 		</h:form>
 	</div>
@@ -67,9 +71,8 @@
 					se démarquent par leur volonté indestructible, de plus, ils sont
 					suivis par les meilleurs coaches aux monde, le club gère tous les
 					aspects de leur vie : santé physique et mentale, marketing,
-					nourriture et performances physiques ! <br />
-					<br />
-					<strong>REJOIGNEZ-NOUS ET DEVENEZ UN VERITABLE ATHLETE !</strong>
+					nourriture et performances physiques ! <br /> <br /> <strong>REJOIGNEZ-NOUS
+						ET DEVENEZ UN VERITABLE ATHLETE !</strong>
 				</p>
 			</div>
 			<div class="col-sm-4">
@@ -129,20 +132,25 @@
 			Les membres de la famille !</h1>
 
 
+
 		<ui:repeat value="#{usersBean.users}" var="user">
-			<div class="card text-white bg-dark mb-3" style="width: 18rem;">
-				<div class="card-header">Membre du club</div>
-				<div class="card-body">
-					<h5 class="card-title">Pseudo : #{user.pseudo}</h5>
-					<p class="card-text">
-						Le nom de ce membre est : #{user.firstname} et son prénom est
-						#{user.name}.<br /> Contactez le par mail : #{user.mail} ou
-						rendez-lui visite, voici son addresse : #{user.address}
-					</p>
-				</div>
+			<div class="card text-white bg-dark mb-3" style="width: 20rem; border-radius: 3.5rem;">
+				<p:panelGrid columns="2">
+					<h:outputText value="Pseudo" style="color: white;" />
+					<h:outputText value="#{user.pseudo}" style="color: white;" />
+					
+					<h:outputText value="Nom" style="color: white;" />
+					<h:outputText value="#{user.name}" style="color: white;" />
+
+					<h:outputText value="Prénom" style="color: white;" />
+					<h:outputText value="#{user.firstname}" style="color: white;" />
+
+					<h:outputText value="Adresse mail" style="color: white;" />
+					<h:outputText value="#{user.mail}" style="color: white;" />
+				</p:panelGrid>
 			</div>
-			<br />
-			<br />
+
+
 		</ui:repeat>
 	</div>
 

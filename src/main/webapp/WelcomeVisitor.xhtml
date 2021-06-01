@@ -26,11 +26,15 @@
 			<p:growl id="messages" />
 			<p:menubar>
 				<p:menuitem value="home" icon="home" url="WelcomeVisitor.xhtml" />
-				<p:menuitem value="à propos" icon="pi pi-question" url="AproposVisitor.xhtml" />
-				<p:menuitem value="Livre d'or" icon="pi pi-book" url="LivretDeCommentairesVisitor.xhtml"></p:menuitem>
+				<p:menuitem value="à propos" icon="pi pi-question"
+					url="AproposVisitor.xhtml" />
+				<p:menuitem value="Livre d'or" icon="pi pi-book"
+					url="LivretDeCommentairesVisitor.xhtml"></p:menuitem>
 				<p:divider layout="vertical" />
-				<p:menuitem value="Se connecter" icon="pi pi-fw pi-sign-in" url="Login.xhtml" />
-				<p:menuitem value="Créer un compte" icon="pi pi-fw pi-user-plus" url="Register.xhtml" />
+				<p:menuitem value="Se connecter" icon="pi pi-fw pi-sign-in"
+					url="Login.xhtml" />
+				<p:menuitem value="Créer un compte" icon="pi pi-fw pi-user-plus"
+					url="Register.xhtml" />
 			</p:menubar>
 		</h:form>
 	</div>
@@ -131,19 +135,22 @@
 
 
 		<ui:repeat value="#{usersBean.users}" var="user">
-			<div class="card text-white bg-dark mb-3" style="width: 18rem;">
-				<div class="card-header">Membre du club</div>
-				<div class="card-body">
-					<h5 class="card-title">Pseudo : #{user.pseudo}</h5>
-					<p class="card-text">
-						Le nom de ce membre est : #{user.firstname} et son prénom est
-						#{user.name}.<br /> Contactez le par mail : #{user.mail} ou
-						rendez-lui visite, voici son addresse : #{user.address}
-					</p>
-				</div>
+			<div class="card text-white bg-dark mb-3"
+				style="width: 20rem; border-radius: 3.5rem;">
+				<p:panelGrid columns="2">
+					<h:outputText value="Pseudo" style="color: white;" />
+					<h:outputText value="#{user.pseudo}" style="color: white;" />
+
+					<h:outputText value="Nom" style="color: white;" />
+					<h:outputText value="#{user.name}" style="color: white;" />
+
+					<h:outputText value="Prénom" style="color: white;" />
+					<h:outputText value="#{user.firstname}" style="color: white;" />
+
+					<h:outputText value="Adresse mail" style="color: white;" />
+					<h:outputText value="#{user.mail}" style="color: white;" />
+				</p:panelGrid>
 			</div>
-			<br />
-			<br />
 		</ui:repeat>
 
 

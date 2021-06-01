@@ -1,7 +1,21 @@
-.home{
+.ui-panelgrid td {
+	background-color: #212529 !important;
+	font-weight: bold;
+	border-radius: 3.5rem;
+}
+
+.ui-panelgrid.showcase-text-align-center .ui-grid-responsive .ui-panelgrid-cell
+	{
+	text-align: center;
+}
+
+.customPanelGrid .ui-panelgrid-content {
+	align-items: center;
+}
+
+.home {
 	content: url("../../resources/img/Logo.jpg");
-	width : 35px;
+	width: 35px;
 	height: 35px;
 	text-decoration: none;
 }
-

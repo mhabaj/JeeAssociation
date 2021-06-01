@@ -51,9 +51,9 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>Faces Servlet</servlet-name>
-		<url-pattern>/faces/*</url-pattern>
+		<url-pattern>/pages/*</url-pattern>
 	</servlet-mapping>
 	<welcome-file-list>
-		<welcome-file>faces/Login.xhtml</welcome-file>
+		<welcome-file>pages/Login.xhtml</welcome-file>
 	</welcome-file-list>
 </web-app>
