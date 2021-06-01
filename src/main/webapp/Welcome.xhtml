@@ -132,7 +132,7 @@
 			Les membres de la famille !</h1>
 
 		<ui:repeat value="#{usersBean.users}" var="user">
-			<div class="card text-white bg-dark mb-3" style="width: 20rem; border-radius: 3.5rem;">
+			<div class="card text-white bg-dark mb-3" style="max-width: 30rem; border-radius: 3.5rem;">
 				<p:panelGrid columns="2">
 					<h:outputText value="Pseudo" style="color: white;" />
 					<h:outputText value="#{user.pseudo}" style="color: white;" />
@@ -147,20 +147,20 @@
 					<h:outputText value="#{user.mail}" style="color: white;" />
 				</p:panelGrid>
 			</div>
-
+			<br/>
+			<br/>
 		</ui:repeat>
 	</div>
 
 	<div class="container">
 		<div class="view overlay">
-			<h3>
+			<h3 style="padding-left: 25rem;">
 				Quelques statistiques pour prouver notre <strong>valeur</strong>
 			</h3>
 			<br /> <img src="resources/img/statistics.png" class="img-fluid"
 				alt="Notre niveau en stats" />
 		</div>
 	</div>
-
 </h:body>
 
 

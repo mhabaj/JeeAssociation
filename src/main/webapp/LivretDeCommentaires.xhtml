@@ -64,8 +64,6 @@
 	</div>
 
 	<!-- Ajout de commentaires -->
-	<br />
-	<br />
 	<div class="container">
 		<h:form>
 			<fieldset>
@@ -74,8 +72,8 @@
 				<div class="form-group">
 					rédigez votre commentaire:
 
-					<h:inputText id="content" class="form-control"
-						value="#{commentBean.comment.content}" update="contentMessage" />
+					<h:inputTextarea id="content" class="form-control"
+						value="#{commentBean.comment.content}" update="contentMessage" resizable="true" />
 					<h:message id="contentMessage" for="content" class="text-danger" />
 				</div>
 
@@ -83,7 +81,7 @@
 				<h:commandButton class="btn btn-info"
 					action="#{commentBean.CommentSomething}" value="Ajouter" />
 				<br />
-
+				
 			</fieldset>
 		</h:form>
 	</div>
